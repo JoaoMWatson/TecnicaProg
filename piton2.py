@@ -5,6 +5,7 @@ alfabeto = list(ascii_lowercase)
 x = 0
 pronto = []
 arrayPalavra = []
+arrayHexa = []
 key = 0
 
 
@@ -50,6 +51,17 @@ def descriptografador_auto(numero):
                     print('{}'.format(alfabeto[i]), end='')
         print("\n--------")
         c=c+1
+
+        
+def criptografa_hexa(palavra):
+    for i in palavra:
+        x = palavra.split(i)
+        x = str(i)
+
+        arrayHexa.append(ord(x))
+        for x in arrayHexa:
+            print('{}'.format(arrayHexa), end='')
+            arrayHexa.remove(x)
                     
 
 print('~-' * 40)
@@ -60,6 +72,7 @@ print("""MENU
 1- Criptografador
 2- Descriptografador
 3- Descriptografador Automatico xD
+4- Criptografador Asc ii
 0- Sair.
     """)
 
@@ -102,7 +115,14 @@ elif opcao == 3:
     numero = (str(input('Digite o codigo que sera descriptografado: '))).strip()
     descriptografador_auto(numero)
 
+elif opcao == 4:
+    print('\n')
+    print('-=' * 40)
+    print('Criptografador 3000')
+    print('-=' * 40)
 
+    palavra = input("Digite uma palavra: ")
+    criptografa_hexa(palavra)
     
 elif opcao == 0:
     print('Encerrando o programa')
